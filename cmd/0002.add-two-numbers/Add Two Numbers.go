@@ -1,10 +1,10 @@
 package main
 
-import utils "problems/utils"
+import utils "github.com/santoshpanna/leetcode-problems/pkg/utils"
 
 func add(val int, node *utils.ListNode) *utils.ListNode {
 	var tempNode = &utils.ListNode{
-		Val: val,
+		Val:  val,
 		Next: nil,
 	}
 
@@ -38,12 +38,12 @@ func addTwoNumbers(l1 *utils.ListNode, l2 *utils.ListNode) *utils.ListNode {
 			l2 = l2.Next
 		}
 
-		result = add(carry % 10, result)
+		result = add(carry%10, result)
 		carry = carry / 10
 	}
 
 	if carry > 0 {
-		result = add(carry % 10, result)
+		result = add(carry%10, result)
 	}
 
 	return result
@@ -53,8 +53,8 @@ func main() {
 	var l1 *utils.ListNode
 	var l2 *utils.ListNode
 
-	l1 = utils.MakeSLL([] int {5,6,4})
-	l2 = utils.MakeSLL([] int {2,4,3})
+	l1 = utils.MakeSLL([]int{5, 6, 4})
+	l2 = utils.MakeSLL([]int{2, 4, 3})
 
 	var result = addTwoNumbers(l1, l2)
 
